@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class Customer {
+public class CustomerEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
@@ -27,7 +27,7 @@ public class Customer {
 	@Column
 	private String city;
 	
-	public Customer() {
+	public CustomerEntity() {
 		super();
 	}
 	
