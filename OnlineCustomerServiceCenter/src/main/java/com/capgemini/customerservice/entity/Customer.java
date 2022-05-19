@@ -1,4 +1,4 @@
-package com.capgemini.model.entity;
+package com.capgemini.customerservice.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
