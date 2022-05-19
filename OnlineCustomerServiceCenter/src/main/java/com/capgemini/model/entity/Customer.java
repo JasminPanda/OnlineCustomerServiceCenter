@@ -9,12 +9,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-@Data
+
 @Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-@Table(name="CustomerTable")
+@Table
 public class Customer {
 	@Id
 	@Column

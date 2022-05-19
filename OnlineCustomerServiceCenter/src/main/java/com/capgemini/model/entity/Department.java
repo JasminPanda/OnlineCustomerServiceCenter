@@ -1,5 +1,5 @@
 package com.capgemini.model.entity;
 
-public class Operator {
+public class Department {
 
 }
