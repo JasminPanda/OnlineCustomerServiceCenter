@@ -2,22 +2,21 @@ package com.capgemini.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-@Data
 @Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@ToString
-
-public class Customer {
+@NoArgsConstructor
+public class Login {
 	@Id
-	private int customerId;
 	private String firstName;
 	private String lastName;
-	private String email;
-	private String mobile;
-	private String city;
+	private int username;
+	private String password;
+	private boolean status;
+	private String userStatus;
+	
 }
