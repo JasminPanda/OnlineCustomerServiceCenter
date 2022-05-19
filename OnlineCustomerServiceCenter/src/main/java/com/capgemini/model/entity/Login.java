@@ -6,22 +6,17 @@ import javax.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-@Data
 @Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@ToString
-public class Operator {
+@NoArgsConstructor
+public class Login {
 	@Id
-	private int operatorId;
 	private String firstName;
 	private String lastName;
-	private String email;
-	private String mobile;
-	private String city;
-	
-	
-	
+	private int username;
+	private String password;
+	private boolean status;
+	private String userStatus;
 	
 }
