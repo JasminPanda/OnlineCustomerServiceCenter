@@ -36,7 +36,6 @@ public String registerCustomer(Customer customer) {
 @Override
 public Issue viewIssueById(Issue issue) {
 	// TODO Auto-generated method stub
-	dao.getById(id);
 	return null;
 }
 
@@ -49,7 +48,7 @@ public Issue reopenIssue(int issue) {
 @Override
 public List<Issue> viewAllIssues() {
 	// TODO Auto-generated method stub
-	return dao.f();
+	return null;
 }
 
 @Override
