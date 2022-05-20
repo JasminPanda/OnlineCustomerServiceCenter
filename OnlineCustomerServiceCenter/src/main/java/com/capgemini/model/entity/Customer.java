@@ -1,23 +1,23 @@
-package com.capgemini.model.dto;
+package com.capgemini.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@Entity
 @Table
 public class Customer {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	private int customerId;
 	@Column
@@ -30,4 +30,5 @@ public class Customer {
 	private String mobile;
 	@Column
 	private String city;
+		
 }

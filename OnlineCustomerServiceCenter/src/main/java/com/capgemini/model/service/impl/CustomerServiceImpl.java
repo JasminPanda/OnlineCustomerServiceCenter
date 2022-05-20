@@ -1,7 +1,68 @@
 package com.capgemini.model.service.impl;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.model.dao.CustomerDao;
+import com.capgemini.model.dto.Issue;
+import com.capgemini.model.dto.Login;
+import com.capgemini.model.entity.Customer;
 import com.capgemini.model.service.CustomerService;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
+
+   @Autowired
+   private CustomerDao dao;
+
+@Override
+public String login(Login login) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public String registerCustomer(Customer customer) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Issue viewIssueById(Issue issue) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Issue reopenIssue(int issue) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public List<Issue> viewAllIssues() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public String changePassword(Login login) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public String forgetPassword(int password) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Customer emailPassword(int email) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }
