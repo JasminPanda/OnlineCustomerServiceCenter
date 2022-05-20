@@ -1,10 +1,8 @@
 package com.capgemini.model.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.capgemini.model.dao.CustomerDao;
 import com.capgemini.model.dao.IssueDao;
 import com.capgemini.model.dto.Issue;
