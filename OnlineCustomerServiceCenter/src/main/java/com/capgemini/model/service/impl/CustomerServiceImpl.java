@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.model.dao.CustomerDao;
+import com.capgemini.model.dao.IssueDao;
 import com.capgemini.model.dto.Issue;
 import com.capgemini.model.dto.Login;
 import com.capgemini.model.entity.Customer;
@@ -16,6 +17,9 @@ public class CustomerServiceImpl implements CustomerService {
 
    @Autowired
    private CustomerDao dao;
+   
+   @Autowired
+   private IssueDao issuedao;
 
 @Override
 public String login(Login login) {
