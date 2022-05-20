@@ -25,10 +25,7 @@ public class Issue {
 	private String description;
 	@Column
 	private String issueStatus;
-	
-	
-	
-		
+
 		public Issue() {
 			super();
 		}
