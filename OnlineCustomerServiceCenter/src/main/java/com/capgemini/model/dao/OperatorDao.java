@@ -1,5 +1,9 @@
 package com.capgemini.model.dao;
 
-public interface OperatorDao {
+import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.capgemini.model.entity.OperatorEntity;
+
+public interface OperatorDao extends JpaRepository<OperatorEntity, Integer>{
+			OperatorEntity findByOperatorName(String operatorName);
 }
