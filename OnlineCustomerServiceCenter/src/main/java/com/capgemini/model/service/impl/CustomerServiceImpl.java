@@ -6,8 +6,12 @@ import org.springframework.stereotype.Service;
 import com.capgemini.model.dao.CustomerDao;
 import com.capgemini.model.dao.IssueDao;
 import com.capgemini.model.dto.Issue;
+<<<<<<< HEAD
 import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.Login;
+=======
+import com.capgemini.model.dto.LoginDto;
+>>>>>>> branch 'main' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 import com.capgemini.model.entity.Customer;
 import com.capgemini.model.service.CustomerService;
 
@@ -21,7 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
    private IssueDao issuedao;
 
 @Override
-public String login(Login login) {
+public String login(LoginDto login) {
 	// TODO Auto-generated method stub
 	return null;
 }
@@ -51,7 +55,7 @@ public List<Issue> viewAllIssues() {
 }
 
 @Override
-public String changePassword(Login login) {
+public String changePassword(LoginDto login) {
 	// TODO Auto-generated method stub
 	return null;
 }
