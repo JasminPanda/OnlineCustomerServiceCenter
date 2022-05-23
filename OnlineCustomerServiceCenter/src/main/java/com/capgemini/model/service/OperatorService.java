@@ -5,16 +5,17 @@ import java.util.List;
 import com.capgemini.model.dto.CustomerDto;
 import com.capgemini.model.dto.Issue;
 import com.capgemini.model.dto.LoginDto;
+import com.capgemini.model.dto.Response;
 
 public interface OperatorService {
 		public String login(LoginDto login);
-		public Issue addCustomerIssue(Issue issue);
+		public Response<Issue> addCustomerIssue(Issue issue);
 		public String sendIntimationEmailToCustomer(int email, int customer);
-		public Issue modifyCustomerIssue(Issue issue);
+		public Response<Issue> modifyCustomerIssue(Issue issue);
 		public String sendModificationEmailToCustomer(int email, int customer);
-		public Issue closeCustomerIssue(Issue issue);
-		public CustomerDto findCustomerById(int customer);
-		public List<CustomerDto> findCustomerByName(String customer);
-		public CustomerDto findCustomerByEmail(String customer);
+		public Response<Issue> closeCustomerIssue(Issue issue);
+		public Response<CustomerDto> findCustomerById(int customerId);
+		public Response<List<CustomerDto>> findCustomerByName(String customerName);
+		public Response<CustomerDto> findCustomerByEmail(String customerEmail);
 		public boolean lockCustomer(int customer);
 }
