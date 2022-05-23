@@ -15,7 +15,7 @@ public interface CustomerService {
 	public Response<List<Issue>> viewAllIssues();
 	public String changePassword(LoginDto login);
 	public String forgetPassword(int password);
-	public Response<CustomerDto> emailPassword(int email);
-		
+	public Response<CustomerDto> emailPassword(int email);	
+	
 	
 }
