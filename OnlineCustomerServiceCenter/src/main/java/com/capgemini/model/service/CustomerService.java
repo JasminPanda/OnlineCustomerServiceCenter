@@ -1,6 +1,7 @@
 package com.capgemini.model.service;
 
 import java.util.List;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.Issue;
 import com.capgemini.model.dto.LoginDto;
 import com.capgemini.model.entity.Customer;
@@ -9,6 +10,7 @@ public interface CustomerService {
 
 	public String login(LoginDto login);
 	public String registerCustomer(Customer customer);
+	public IssueDto viewIssueById(IssueDto issue);
 	public Issue viewIssueById(Issue issue);
 	public Issue reopenIssue(int issue);
 	public List<Issue> viewAllIssues();
