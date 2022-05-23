@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.capgemini.model.dao.OperatorDao;
 import com.capgemini.model.dto.CustomerDto;
-import com.capgemini.model.dto.Issue;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.LoginDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.OperatorService;
@@ -25,7 +25,7 @@ public class OperatorServiceImpl implements OperatorService {
 	}
 
 	@Override
-	public Response<Issue> addCustomerIssue(Issue issue) {
+	public Response<IssueDto> addCustomerIssue(IssueDto issue) {
 		
 		return null;
 	}
@@ -37,7 +37,7 @@ public class OperatorServiceImpl implements OperatorService {
 	}
 
 	@Override
-	public Response<Issue> modifyCustomerIssue(Issue issue) {
+	public Response<IssueDto> modifyCustomerIssue(IssueDto issue) {
 
 		return null;
 	}
@@ -49,7 +49,7 @@ public class OperatorServiceImpl implements OperatorService {
 	}
 
 	@Override
-	public Response<Issue> closeCustomerIssue(Issue issue) {
+	public Response<IssueDto> closeCustomerIssue(IssueDto issue) {
 
 		return null;
 	}

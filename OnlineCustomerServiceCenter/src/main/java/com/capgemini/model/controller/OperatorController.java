@@ -1,11 +1,9 @@
 package com.capgemini.model.controller;
 
-import org.springframework.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.model.dto.CustomerDto;
-import com.capgemini.model.dto.Issue;
-import com.capgemini.model.dto.OperatorDto;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.OperatorService;
 
@@ -28,12 +25,12 @@ public class OperatorController {
 		private OperatorService operatorService;
 			
 		@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
-		public Response<Issue> addIssue(@RequestBody Issue issue){
+		public Response<IssueDto> addIssue(@RequestBody IssueDto issue){
 			return operatorService.addCustomerIssue(issue);
 		}
 		
 		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-		public Response<Issue> modifyIssue(@RequestBody Issue issue){
+		public Response<IssueDto> modifyIssue(@RequestBody IssueDto issue){
 			return operatorService.modifyCustomerIssue(issue);
 		}
 		
@@ -53,7 +50,7 @@ public class OperatorController {
 		}
 		
 		@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-		public Response<Issue> closeCustomerIssue(@RequestBody Issue issue){
+		public Response<IssueDto> closeCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.closeCustomerIssue(issue);
 		}
 }

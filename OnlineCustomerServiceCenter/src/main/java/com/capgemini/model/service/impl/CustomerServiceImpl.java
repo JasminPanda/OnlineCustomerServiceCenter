@@ -7,7 +7,7 @@ import com.capgemini.model.dao.CustomerDao;
 import com.capgemini.model.dao.IssueDao;
 import com.capgemini.model.dto.Issue;
 import com.capgemini.model.dto.IssueDto;
-import com.capgemini.model.dto.LoginDto;
+import com.capgemini.model.dto.Login;
 import com.capgemini.model.entity.Customer;
 import com.capgemini.model.service.CustomerService;
 
@@ -21,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
    private IssueDao issuedao;
 
 @Override
-public String login(LoginDto login) {
+public String login(Login login) {
 	// TODO Auto-generated method stub
 	return null;
 }
@@ -51,7 +51,7 @@ public List<Issue> viewAllIssues() {
 }
 
 @Override
-public String changePassword(LoginDto login) {
+public String changePassword(Login login) {
 	// TODO Auto-generated method stub
 	return null;
 }
@@ -74,6 +74,10 @@ public IssueDto viewIssueById(IssueDto issue) {
 	return null;
 }
 
-
+@Override
+public IssueDto reopenIssue(int issue) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }

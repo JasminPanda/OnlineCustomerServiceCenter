@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.usertype.UserType;
+
 @Table
 public class LoginDto {
 	@Id
@@ -12,7 +14,7 @@ public class LoginDto {
 	@Column
     private String password;
 	@Column
-    private String UserType;
+    private UserType type;;
 	@Column
     private boolean isActive;
 	
@@ -20,18 +22,18 @@ public class LoginDto {
 		super();
 	}
 	
-	public LoginDto(int username, String password, String UserType, boolean isActive) {
+	public LoginDto(int username, String password, UserType type, boolean isActive) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.UserType = UserType;
+		this.type = type;
 		this.isActive = isActive;
 		
 	}
 
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", UserType=" + UserType + ", isActive="
+		return "Login [username=" + username + ", password=" + password + ", UserType=" + type + ", isActive="
 				+ isActive + "]";
 	}
 
@@ -51,12 +53,12 @@ public class LoginDto {
 		this.password = password;
 	}
 
-	public String getUserType() {
-		return UserType;
+	public UserType getUserType() {
+		return type;
 	}
 
 	public void setUserType(String userType) {
-		UserType = userType;
+		this.type = type;
 	}
 
 	public boolean isActive() {
