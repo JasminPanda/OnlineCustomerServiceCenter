@@ -9,10 +9,12 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @Entity
 @NoArgsConstructor
+@ToString
 @Table(name = "operator")
 public class OperatorEntity {
 	@Id
