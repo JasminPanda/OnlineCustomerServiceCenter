@@ -19,11 +19,7 @@ public class Department {
 	@Column
      private int deptId;
 	@Column
-     private String customerName;
-	@Column
-     private String phoneNumber;
-	@Column
-     private boolean isActive;
+     private String deptName;
 	
 	public Department() {
 		super();
