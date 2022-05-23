@@ -51,11 +51,15 @@ public class LoginDto {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
 	@Override
 	public String toString() {
-		return "Login [username=" + username + ", password=" + password + ", UserType=" + UserType + ", isActive="
+		return "LoginDto [username=" + username + ", password=" + password + ", UserType=" + UserType + ", isActive="
 				+ isActive + "]";
 	}
+
+	
+	
 	
 }
 
