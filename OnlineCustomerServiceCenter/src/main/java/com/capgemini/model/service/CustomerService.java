@@ -16,9 +16,10 @@ public interface CustomerService {
 	public Response<Issue> reopenIssue(Issue issue);
 	public Response<List<Issue>> viewAllIssues();
 	public Response<LoginDto> changePassword(String password);
-	public String forgetPassword(int password);
-	public Response<CustomerDto> emailPassword(int email);
 	public Response<LoginDto> forgetPassword(String password);
+	public Response<CustomerDto> emailPassword(int email);
+	
+	
 	
 	
 }
