@@ -5,13 +5,13 @@ import java.util.Date;
 public class CallDto {
 
 	private int call;
-	private CallDto Date;
+	private  Date callDate;
 	private double callDuration;
 	private String phoneNumber;
-	public CallDto(int call, CallDto date, double callDuration, String phoneNumber) {
+	public CallDto(int call, Date callDate, double callDuration, String phoneNumber) {
 		super();
 		this.call = call;
-		Date = date;
+		this.callDate=callDate;
 		this.callDuration = callDuration;
 		this.phoneNumber = phoneNumber;
 	}
@@ -19,7 +19,7 @@ public class CallDto {
 	
 	@Override
 	public String toString() {
-		return "CallDto [call=" + call + ", Date=" + Date + ", callDuration=" + callDuration + ", phoneNumber="
+		return "CallDto [call=" + call + ", Date=" + callDate + ", callDuration=" + callDuration + ", phoneNumber="
 				+ phoneNumber + "]";
 	}
 
@@ -30,11 +30,11 @@ public class CallDto {
 	public void setCall(int call) {
 		this.call = call;
 	}
-	public CallDto getDate() {
-		return Date;
+	public Date getDate() {
+		return callDate;
 	}
-	public void setDate(CallDto date) {
-		Date = date;
+	public void setDate(Date callDate) {
+		this.callDate=callDate;
 	}
 	public double getCallDuration() {
 		return callDuration;
