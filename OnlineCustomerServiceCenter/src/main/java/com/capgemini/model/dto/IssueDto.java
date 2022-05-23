@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import lombok.Data;
 
 @Data
-public class Issue {
+public class IssueDto {
 	@Id
 	private String issueId;
 	private String issueType;
