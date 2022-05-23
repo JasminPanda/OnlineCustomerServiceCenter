@@ -6,5 +6,5 @@ import lombok.Data;
 public class Response<T> {
 	private T data;
 	private String status="Sucess";
-	private Error error;
+	private AppError error;
 }

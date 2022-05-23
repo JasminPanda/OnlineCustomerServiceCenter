@@ -1,25 +1,13 @@
 package com.capgemini.model.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Table
 public class CustomerDto {
-	@Id
-	@Column
+
 	private int customerId;
-	@Column
 	private String firstName;
-	@Column
 	private String lastName;
-	@Column
 	private String email;
-	@Column
 	private String mobile;
-	@Column
 	private String city;
-	
 	
 	public CustomerDto() {
 		super();
