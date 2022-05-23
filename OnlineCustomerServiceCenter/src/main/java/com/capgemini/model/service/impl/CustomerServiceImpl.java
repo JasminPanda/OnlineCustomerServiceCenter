@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.capgemini.model.dao.CustomerDao;
 import com.capgemini.model.dao.IssueDao;
 import com.capgemini.model.dto.Issue;
-import com.capgemini.model.dto.IssueDto;
+import com.capgemini.model.dto.Issue;
 import com.capgemini.model.dto.LoginDto;
 import com.capgemini.model.entity.Customer;
 import com.capgemini.model.service.CustomerService;
@@ -67,13 +67,6 @@ public Customer emailPassword(int email) {
 	// TODO Auto-generated method stub
 	return null;
 }
-
-@Override
-public IssueDto viewIssueById(IssueDto issue) {
-	// TODO Auto-generated method stub
-	return null;
-}
-
 
 
 }

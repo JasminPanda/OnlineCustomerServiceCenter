@@ -1,5 +1,5 @@
 package com.capgemini.model.dto;
 
-public class Solution {
+public class SolutionDto {
 
 }
