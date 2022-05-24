@@ -62,7 +62,5 @@ public class OperatorController {
 		@GetMapping(value="/{customerName}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<List<CustomerDto>> findCustomerByName(@PathVariable("customerName") String customerName){
 			return operatorService.findCustomerByName(customerName);
-		}
-		
-		
+		}		
 }

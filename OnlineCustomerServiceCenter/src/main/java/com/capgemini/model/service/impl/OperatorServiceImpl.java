@@ -31,7 +31,7 @@ public class OperatorServiceImpl implements OperatorService {
 	}
 
 	@Override
-	public String sendIntimationEmailToCustomer(int email, int customer) {
+	public String sendIntimationEmailToCustomer(int operatorId, int customerId) {
 		
 		return null;
 	}
@@ -43,7 +43,7 @@ public class OperatorServiceImpl implements OperatorService {
 	}
 
 	@Override
-	public String sendModificationEmailToCustomer(int email, int customer) {
+	public String sendModificationEmailToCustomer(int operatorId, int customerId) {
 
 		return null;
 	}
