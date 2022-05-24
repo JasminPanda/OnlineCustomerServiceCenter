@@ -1,25 +1,46 @@
 package com.capgemini.model.dto;
 
 
+<<<<<<< HEAD
+=======
+import org.hibernate.usertype.UserType;
+
+@Table
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 public class LoginDto {
 
     private int username;
     private String password;
+<<<<<<< HEAD
     private String UserType;
+=======
+	@Column
+    private UserType type;;
+	@Column
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
     private boolean isActive;
 	public LoginDto() {
 		super();
 	}
 	
-	public LoginDto(int username, String password, String UserType, boolean isActive) {
+	public LoginDto(int username, String password, UserType type, boolean isActive) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.UserType = UserType;
+		this.type = type;
 		this.isActive = isActive;
 		
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public String toString() {
+		return "Login [username=" + username + ", password=" + password + ", UserType=" + type + ", isActive="
+				+ isActive + "]";
+	}
+
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 	public int getUsername() {
 		return username;
 	}
@@ -36,12 +57,12 @@ public class LoginDto {
 		this.password = password;
 	}
 
-	public String getUserType() {
-		return UserType;
+	public UserType getUserType() {
+		return type;
 	}
 
 	public void setUserType(String userType) {
-		UserType = userType;
+		this.type = type;
 	}
 
 	public boolean isActive() {

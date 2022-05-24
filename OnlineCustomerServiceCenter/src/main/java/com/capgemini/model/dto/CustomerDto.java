@@ -1,6 +1,8 @@
 package com.capgemini.model.dto;
 
-public class CustomerDto {
+import java.io.Serializable;
+
+public class CustomerDto implements Serializable {
 
 	private int customerId;
 	private String firstName;

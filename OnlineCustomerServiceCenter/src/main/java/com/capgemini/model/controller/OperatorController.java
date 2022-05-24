@@ -25,7 +25,11 @@ public class OperatorController {
 		private OperatorService operatorService;
 			
 		@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+<<<<<<< HEAD
 		public Response<IssueDto> addCustomerIssue(@RequestBody IssueDto issue){
+=======
+		public Response<IssueDto> addIssue(@RequestBody IssueDto issue){
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 			return operatorService.addCustomerIssue(issue);
 		}
 		
@@ -35,7 +39,11 @@ public class OperatorController {
 		}
 		
 		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+<<<<<<< HEAD
 		public Response<IssueDto> modifyCustomerIssue(@RequestBody IssueDto issue){
+=======
+		public Response<IssueDto> modifyIssue(@RequestBody IssueDto issue){
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 			return operatorService.modifyCustomerIssue(issue);
 		}
 		
@@ -62,5 +70,14 @@ public class OperatorController {
 		@GetMapping(value="/{customerName}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<List<CustomerDto>> findCustomerByName(@PathVariable("customerName") String customerName){
 			return operatorService.findCustomerByName(customerName);
+<<<<<<< HEAD
 		}		
+=======
+		}
+		
+		@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+		public Response<IssueDto> closeCustomerIssue(@RequestBody IssueDto issue){
+			return operatorService.closeCustomerIssue(issue);
+		}
+>>>>>>> branch 'Kanchan_Branch1' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 }
