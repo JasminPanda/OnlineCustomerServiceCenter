@@ -23,7 +23,12 @@ import com.capgemini.model.service.dao.DepartmentDao;
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private DepartmentDao deparmentDao;
+    @Autowired
 	private Department department;
+    @Autowired
+    private OperatorDao operatorDao;
+    @Autowired 
+    private OperatorEntity operator;
     
 	@Override
 	public Response<Department> addDepartment(Department department) {
@@ -131,17 +136,17 @@ public class AdminServiceImpl implements AdminService {
 
 		 try {
 	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(operator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	     entity.setOperatorId((int) operator.getOperatorId);
+	     entity.setFirstName((String) operator.getFirstName);
+	     entity.setLastName((String) operator.getLastName);
+	     entity.setEmail((String) operator.getEmail);
+	     entity.setMobile((String) operator.getMobile);
+	     entity.setCity((String) operator.getCity);
 	     
 			OperatorDto.save(entity);
 			 OperatorEntity newOperator= new OperatorEntity();
 			
-			((OperatorEntity) newOperator).setOperatorID(entity.getOperatorId());
+			((OperatorEntity) newOperator).setOperatorId(entity.getOperatorId());
 			newOperator.setFirstName(entity.getFirstName());
 			newOperator.setLastName(entity.getLastName());
 			newOperator.setEmail(entity.getEmail());
@@ -165,17 +170,17 @@ public class AdminServiceImpl implements AdminService {
 
 		 try {
 	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(ASTIterator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	     entity.setOperatorId(operator.getOperatorId());
+	     entity.setFirstName(operator.getFirstName());
+	     entity.setLastName(operator.getLastName());
+	     entity.setEmail(operator.getEmail());
+	     entity.setMobile(operator.getMobile());
+	     entity.setCity(operator.getCity());
 	     
 			OperatorDto.save(entity);
 			 OperatorEntity newOperator= new OperatorEntity();
 			
-			((OperatorEntity) newOperator).setOperatorID(entity.getOperatorId());
+			((OperatorEntity) newOperator).setOperatorId(entity.getOperatorId());
 			newOperator.setFirstName(entity.getFirstName());
 			newOperator.setLastName(entity.getLastName());
 			newOperator.setEmail(entity.getEmail());
@@ -198,22 +203,22 @@ public class AdminServiceImpl implements AdminService {
 		Response<OperatorDto> response=new Response<>();	
 		
 		 try {
-	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(operator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	    OperatorEntity entity1=new  OperatorEntity();
+	     entity1.setOperatorId((int) operator.getOperatorId);
+	     entity1.setFirstName((String) operator.getFirstName);
+	     entity1.setLastName((String) operator.getLastName);
+	     entity1.setEmail((String) operator.getEmail);
+	     entity1.setMobile((String) operator.getMobile);
+	     entity1.setCity((String) operator.getCity);
 	     
-			OperatorDto.save(entity);
+			OperatorDto.save(entity1);
 			 OperatorEntity newOperator= new OperatorEntity();
-			newOperator.setOperatorID(entity.getOperatorId());
-			newOperator.setFirstName(entity.getFirstName());
-			newOperator.setLastName(entity.getLastName());
-			newOperator.setEmail(entity.getEmail());
-			newOperator.setMobile(entity.getMobile());
-			newOperator.setCity(entity.getCity());
+			newOperator.setOperatorId(entity1.getOperatorId());
+			newOperator.setFirstName(entity1.getFirstName());
+			newOperator.setLastName(entity1.getLastName());
+			newOperator.setEmail(entity1.getEmail());
+			newOperator.setMobile(entity1.getMobile());
+			newOperator.setCity(entity1.getCity());
 			response.setData(operator);
 		 } catch(Exception e) {
 			 AppError error = new AppError();
@@ -231,13 +236,13 @@ public class AdminServiceImpl implements AdminService {
 		
 		 try {
 	    
-			 List<OperatorEntity> entities= Operator.findAll();
+			 List<OperatorEntity> entities= operatorDao.findAll();
 			List<Operator> operators= new ArrayList<>();
 			 if(entities != null) {
 				 for(OperatorEntity   entity: entities) {
 				 OperatorEntity newOperator= new OperatorEntity();
 					
-					newOperator.setOperatorID(entity.getOperatorId());
+					newOperator.setOperatorId(entity.getOperatorId());
 					newOperator.setFirstName(entity.getFirstName());
 					newOperator.setLastName(entity.getLastName());
 					newOperator.setEmail(entity.getEmail());
@@ -247,7 +252,7 @@ public class AdminServiceImpl implements AdminService {
 				 }
 				 
 			 }
-			 response.setData(operators);	
+			 response.setData(department);	
 		 } catch(Exception e) {
 			 AppError error = new AppError();
 				error.setCode("ERR_GETTING_DEPARTMENT");
@@ -261,16 +266,17 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<List<OperatorDto>> findAllOperators() {
+		Response<OperatorDto> response=new Response<>();
 		// TODO Auto-generated method stub
 		 try {
 			    
-			 List<OperatorEntity> entities= Operator.findAll();
+			 List<OperatorEntity> entities= operatorDao.findAll();
 			List<Operator> operators= new ArrayList<>();
 			 if(entities != null) {
 				 for(OperatorEntity   entity: entities) {
 				 OperatorEntity newOperator= new OperatorEntity();
 					
-					newOperator.setOperatorID(entity.getOperatorId());
+					newOperator.setOperatorId(entity.getOperatorId());
 					newOperator.setFirstName(entity.getFirstName());
 					newOperator.setLastName(entity.getLastName());
 					newOperator.setEmail(entity.getEmail());
@@ -280,7 +286,7 @@ public class AdminServiceImpl implements AdminService {
 				 }
 				 
 			 }
-			 response.setData(operators);	
+			 (response).setData(department);	
 		 } catch(Exception e) {
 			 AppError error = new AppError();
 				error.setCode("ERR_GETTING_DEPARTMENT");

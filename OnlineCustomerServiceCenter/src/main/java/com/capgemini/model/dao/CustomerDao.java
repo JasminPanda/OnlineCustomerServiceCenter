@@ -7,5 +7,6 @@ import com.capgemini.model.entity.Customer;
 
 @Repository
 public interface CustomerDao extends JpaRepository<Customer, Integer> {
+	
 
 }
