@@ -111,7 +111,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<DepartmentDto> findByDepartmentId(int deptId) {
-		// TODO Auto-generated method stub
 		Response<Department> response=new Response<>();	
 		
 		 try {
