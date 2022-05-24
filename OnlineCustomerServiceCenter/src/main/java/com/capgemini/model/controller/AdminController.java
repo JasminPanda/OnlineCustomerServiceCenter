@@ -62,7 +62,7 @@ public class AdminController {
 			}
 			
 			@GetMapping(value="/{operatorId}", produces = MediaType.APPLICATION_JSON_VALUE)
-			public Response<OperatorDto> findOperatorById(@PathVariable("operatorId") int operatorId){
+			public Response<List<OperatorDto>> findOperatorById(@PathVariable("operatorId") int operatorId){
 				return adminService.findOperatorById(operatorId);
 			}
 			

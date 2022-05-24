@@ -3,6 +3,7 @@ package com.capgemini.model.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.hql.internal.ast.util.ASTIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.spel.ast.Operator;
 import org.springframework.stereotype.Service;
@@ -161,12 +162,12 @@ public class AdminServiceImpl implements AdminService {
 	public boolean removeOperator(int operatorId) {
 		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();	
-		
+
 		 try {
 	    OperatorEntity entity=new  OperatorEntity();
 	     entity.setOperatorID(operator.getOperatorId);
 	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(operator.getLastName);
+	     entity.setLastName(ASTIterator.getLastName);
 	     entity.setEmail(operator.getEmail);
 	     entity.setMobile(operator.getMobile);
 	     entity.setCity(operator.getCity);
@@ -174,13 +175,13 @@ public class AdminServiceImpl implements AdminService {
 			OperatorDto.save(entity);
 			 OperatorEntity newOperator= new OperatorEntity();
 			
-			newOperator.setOperatorID(entity.getOperatorId());
+			((OperatorEntity) newOperator).setOperatorID(entity.getOperatorId());
 			newOperator.setFirstName(entity.getFirstName());
 			newOperator.setLastName(entity.getLastName());
 			newOperator.setEmail(entity.getEmail());
 			newOperator.setMobile(entity.getMobile());
 			newOperator.setCity(entity.getCity());
-			response.setData(operator);
+			response.setData(department);
 			
 		 } catch(Exception e) {
 			 AppError error = new AppError();
