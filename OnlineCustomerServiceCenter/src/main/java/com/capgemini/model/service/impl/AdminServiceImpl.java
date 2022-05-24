@@ -35,12 +35,7 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private OperatorEntity operator;
     
-	@Override
-	public boolean addDepartment(DepartmentDto dept) {
-
-		return false;
-
-	}	
+		
 		public Response<Department> addDepartment(Department department) {
 		Response<Department> response=new Response<>();	
 		
@@ -307,6 +302,12 @@ public class AdminServiceImpl implements AdminService {
 		
 		return null;
 	
+	}
+
+	@Override
+	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
