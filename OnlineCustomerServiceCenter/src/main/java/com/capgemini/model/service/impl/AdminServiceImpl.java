@@ -22,25 +22,21 @@ import com.capgemini.model.entity.OperatorEntity;
 import com.capgemini.model.service.AdminService;
 
 import com.capgemini.model.service.dao.DepartmentDao;
->>>>>>> branch 'main' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 @Service
 public class AdminServiceImpl implements AdminService {
-<<<<<<< HEAD
 
 	
-=======
     @Autowired
     private DepartmentDao deparmentDao;
 	private Department department;
     
->>>>>>> branch 'main' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 	@Override
-<<<<<<< HEAD
 	public boolean addDepartment(DepartmentDto dept) {
 
 		return false;
-=======
-	public Response<Department> addDepartment(Department department) {
+
+	}	
+		public Response<Department> addDepartment(Department department) {
 		Response<Department> response=new Response<>();	
 		
 	 try {
@@ -61,7 +57,6 @@ public class AdminServiceImpl implements AdminService {
 		 
 	 }
 		return response;
->>>>>>> branch 'main' of https://github.com/JasminPanda/OnlineCustomerServiceCenter.git
 	}
 
 	@Override
@@ -306,12 +301,6 @@ public class AdminServiceImpl implements AdminService {
 		
 		return null;
 	
-	}
-
-	@Override
-	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	

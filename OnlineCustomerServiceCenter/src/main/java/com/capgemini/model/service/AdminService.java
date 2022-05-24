@@ -8,7 +8,7 @@ import com.capgemini.model.dto.Response;
 import com.capgemini.model.entity.Department;
 
 public interface AdminService {
-		public Response<DepartmentDto> addDepartment(DepartmentDto dept);
+		public boolean addDepartment(DepartmentDto dept);
 		public Response<DepartmentDto> removeDepartment(int deptId);
 		public Response<DepartmentDto> modifyDepartment(DepartmentDto dept);
 		public Response<DepartmentDto> findByDepartmentId(int deptId);
