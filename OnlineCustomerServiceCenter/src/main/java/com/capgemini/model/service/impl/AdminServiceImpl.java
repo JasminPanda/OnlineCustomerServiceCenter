@@ -308,6 +308,12 @@ public class AdminServiceImpl implements AdminService {
 	
 	}
 
+	@Override
+	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }
