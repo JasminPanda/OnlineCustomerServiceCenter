@@ -10,5 +10,9 @@ import lombok.ToString;
 public class DepartmentDto {
 	private int deptID;
 	private String deptName;
+	public Object getDepartmentName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

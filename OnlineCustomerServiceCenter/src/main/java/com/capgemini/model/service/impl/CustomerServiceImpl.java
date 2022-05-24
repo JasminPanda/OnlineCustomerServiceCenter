@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.capgemini.model.dao.CustomerDao;
 import com.capgemini.model.dto.CustomerDto;
-import com.capgemini.model.dto.Issue;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.LoginDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.CustomerService;
@@ -26,19 +26,19 @@ public  class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Response<Issue> viewIssueById(int issueId) {
+	public Response<IssueDto> viewIssueById(int issueId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Response<Issue> reopenIssue(int issue) {
+	public Response<IssueDto> reopenIssue(int issue) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Response<List<Issue>> viewAllIssues() {
+	public Response<List<IssueDto>> viewAllIssues() {
 		// TODO Auto-generated method stub
 		return null;
 	}

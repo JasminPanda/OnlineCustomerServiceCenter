@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.model.dto.CustomerDto;
-import com.capgemini.model.dto.Issue;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.LoginDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.CustomerService;
@@ -23,16 +23,16 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@GetMapping(value="/{issueId}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response<Issue> viewIssueById(@PathVariable("issueId") int issueId){
+	public Response<IssueDto> viewIssueById(@PathVariable("issueId") int issueId){
 		return customerService.viewIssueById(issueId);
 	}
 	
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response<Issue> reOpenIssue(@RequestBody int issue){
+	public Response<IssueDto> reOpenIssue(@RequestBody int issue){
 		return customerService.reopenIssue(issue);
 	}
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Response<List<Issue>> viewAllIssues(@RequestBody Issue issue){
+	public Response<List<IssueDto>> viewAllIssues(@RequestBody IssueDto issue){
 		return customerService.viewAllIssues();
 	}
 	@GetMapping(value="/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
