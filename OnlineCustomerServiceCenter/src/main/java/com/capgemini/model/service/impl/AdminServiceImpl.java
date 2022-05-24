@@ -3,6 +3,8 @@ package com.capgemini.model.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import org.hibernate.hql.internal.ast.util.ASTIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.spel.ast.Operator;
@@ -18,9 +20,12 @@ import com.capgemini.model.dto.Response;
 import com.capgemini.model.entity.Department;
 import com.capgemini.model.entity.OperatorEntity;
 import com.capgemini.model.service.AdminService;
+
 import com.capgemini.model.service.dao.DepartmentDao;
 @Service
 public class AdminServiceImpl implements AdminService {
+
+	
     @Autowired
     private DepartmentDao deparmentDao;
     @Autowired
@@ -31,7 +36,12 @@ public class AdminServiceImpl implements AdminService {
     private OperatorEntity operator;
     
 	@Override
-	public Response<Department> addDepartment(Department department) {
+	public boolean addDepartment(DepartmentDto dept) {
+
+		return false;
+
+	}	
+		public Response<Department> addDepartment(Department department) {
 		Response<Department> response=new Response<>();	
 		
 	 try {
@@ -297,12 +307,6 @@ public class AdminServiceImpl implements AdminService {
 		
 		return null;
 	
-	}
-
-	@Override
-	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	
