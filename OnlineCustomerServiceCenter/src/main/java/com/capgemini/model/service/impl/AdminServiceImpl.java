@@ -5,13 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import org.hibernate.hql.internal.ast.util.ASTIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.spel.ast.Operator;
-import org.springframework.stereotype.Service;
-
-
-import com.capgemini.model.dao.AdminDao;
 import com.capgemini.model.dao.OperatorDao;
 import com.capgemini.model.dto.AppError;
 import com.capgemini.model.dto.DepartmentDto;
@@ -22,20 +17,21 @@ import com.capgemini.model.entity.OperatorEntity;
 import com.capgemini.model.service.AdminService;
 
 import com.capgemini.model.service.dao.DepartmentDao;
+
 @Service
 public class AdminServiceImpl implements AdminService {
 
 	
     @Autowired
     private DepartmentDao deparmentDao;
+    @Autowired
 	private Department department;
+    @Autowired
+    private OperatorDao operatorDao;
+    @Autowired
+    private OperatorEntity operator;
     
-	@Override
-	public boolean addDepartment(DepartmentDto dept) {
-
-		return false;
-
-	}	
+		
 		public Response<Department> addDepartment(Department department) {
 		Response<Department> response=new Response<>();	
 		
@@ -140,17 +136,17 @@ public class AdminServiceImpl implements AdminService {
 
 		 try {
 	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(operator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	     entity.setOperatorId(operator.getOperatorId());
+	     entity.setFirstName(operator.getFirstName());
+	     entity.setLastName(operator.getLastName());
+	     entity.setEmail(operator.getEmail());
+	     entity.setMobile(operator.getMobile());
+	     entity.setCity(operator.getCity());
 	     
 			OperatorDto.save(entity);
 			 OperatorEntity newOperator= new OperatorEntity();
 			
-			((OperatorEntity) newOperator).setOperatorID(entity.getOperatorId());
+			((OperatorEntity) newOperator).setOperatorId(entity.getOperatorId());
 			newOperator.setFirstName(entity.getFirstName());
 			newOperator.setLastName(entity.getLastName());
 			newOperator.setEmail(entity.getEmail());
@@ -173,23 +169,23 @@ public class AdminServiceImpl implements AdminService {
 		Response<OperatorDto> response=new Response<>();	
 
 		 try {
-	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(ASTIterator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	    OperatorEntity entity1=new  OperatorEntity();
+	     entity1.setOperatorId(operator.getOperatorId());
+	     entity1.setFirstName(operator.getFirstName());
+	     entity1.setLastName(operator.getLastName());
+	     entity1.setEmail(operator.getEmail());
+	     entity1.setMobile(operator.getMobile());
+	     entity1.setCity(operator.getCity());
 	     
-			OperatorDto.save(entity);
+			OperatorDto.save(entity1);
 			 OperatorEntity newOperator= new OperatorEntity();
 			
-			((OperatorEntity) newOperator).setOperatorID(entity.getOperatorId());
-			newOperator.setFirstName(entity.getFirstName());
-			newOperator.setLastName(entity.getLastName());
-			newOperator.setEmail(entity.getEmail());
-			newOperator.setMobile(entity.getMobile());
-			newOperator.setCity(entity.getCity());
+			((OperatorEntity) newOperator).setOperatorId(entity1.getOperatorId());
+			newOperator.setFirstName(entity1.getFirstName());
+			newOperator.setLastName(entity1.getLastName());
+			newOperator.setEmail(entity1.getEmail());
+			newOperator.setMobile(entity1.getMobile());
+			newOperator.setCity(entity1.getCity());
 			response.setData(department);
 			
 		 } catch(Exception e) {
@@ -208,16 +204,16 @@ public class AdminServiceImpl implements AdminService {
 		
 		 try {
 	    OperatorEntity entity=new  OperatorEntity();
-	     entity.setOperatorID(operator.getOperatorId);
-	     entity.setFirstName(operator.getFirstName);
-	     entity.setLastName(operator.getLastName);
-	     entity.setEmail(operator.getEmail);
-	     entity.setMobile(operator.getMobile);
-	     entity.setCity(operator.getCity);
+	     entity.setOperatorId(operator.getOperatorId());
+	     entity.setFirstName(operator.getFirstName());
+	     entity.setLastName(operator.getLastName());
+	     entity.setEmail(operator.getEmail());
+	     entity.setMobile(operator.getMobile());
+	     entity.setCity(operator.getCity());
 	     
 			OperatorDto.save(entity);
 			 OperatorEntity newOperator= new OperatorEntity();
-			newOperator.setOperatorID(entity.getOperatorId());
+			newOperator.setOperatorId(entity.getOperatorId());
 			newOperator.setFirstName(entity.getFirstName());
 			newOperator.setLastName(entity.getLastName());
 			newOperator.setEmail(entity.getEmail());
@@ -240,13 +236,13 @@ public class AdminServiceImpl implements AdminService {
 		
 		 try {
 	    
-			 List<OperatorEntity> entities= Operator.findAll();
+			 List<OperatorEntity> entities= operatorDao.findAll();
 			List<Operator> operators= new ArrayList<>();
 			 if(entities != null) {
 				 for(OperatorEntity   entity: entities) {
 				 OperatorEntity newOperator= new OperatorEntity();
 					
-					newOperator.setOperatorID(entity.getOperatorId());
+					newOperator.setOperatorId(entity.getOperatorId());
 					newOperator.setFirstName(entity.getFirstName());
 					newOperator.setLastName(entity.getLastName());
 					newOperator.setEmail(entity.getEmail());
@@ -256,7 +252,7 @@ public class AdminServiceImpl implements AdminService {
 				 }
 				 
 			 }
-			 response.setData(operators);	
+			 response.setData(department);	
 		 } catch(Exception e) {
 			 AppError error = new AppError();
 				error.setCode("ERR_GETTING_DEPARTMENT");
@@ -271,15 +267,16 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public Response<List<OperatorDto>> findAllOperators() {
 		// TODO Auto-generated method stub
+		Response<OperatorDto> response=new Response<>();
 		 try {
 			    
-			 List<OperatorEntity> entities= Operator.findAll();
+			 List<OperatorEntity> entities= operatorDao.findAll();
 			List<Operator> operators= new ArrayList<>();
 			 if(entities != null) {
 				 for(OperatorEntity   entity: entities) {
 				 OperatorEntity newOperator= new OperatorEntity();
 					
-					newOperator.setOperatorID(entity.getOperatorId());
+					newOperator.setOperatorId(entity.getOperatorId());
 					newOperator.setFirstName(entity.getFirstName());
 					newOperator.setLastName(entity.getLastName());
 					newOperator.setEmail(entity.getEmail());
@@ -289,7 +286,7 @@ public class AdminServiceImpl implements AdminService {
 				 }
 				 
 			 }
-			 response.setData(operators);	
+			response.setData(department);	
 		 } catch(Exception e) {
 			 AppError error = new AppError();
 				error.setCode("ERR_GETTING_DEPARTMENT");
@@ -300,6 +297,12 @@ public class AdminServiceImpl implements AdminService {
 		
 		return null;
 	
+	}
+
+	@Override
+	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
