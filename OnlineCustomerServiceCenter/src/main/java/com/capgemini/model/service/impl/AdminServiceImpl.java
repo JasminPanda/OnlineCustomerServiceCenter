@@ -5,13 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import org.hibernate.hql.internal.ast.util.ASTIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.spel.ast.Operator;
-import org.springframework.stereotype.Service;
-
-
-import com.capgemini.model.dao.AdminDao;
 import com.capgemini.model.dao.OperatorDao;
 import com.capgemini.model.dto.AppError;
 import com.capgemini.model.dto.DepartmentDto;
@@ -22,6 +17,7 @@ import com.capgemini.model.entity.OperatorEntity;
 import com.capgemini.model.service.AdminService;
 
 import com.capgemini.model.service.dao.DepartmentDao;
+
 @Service
 public class AdminServiceImpl implements AdminService {
 
