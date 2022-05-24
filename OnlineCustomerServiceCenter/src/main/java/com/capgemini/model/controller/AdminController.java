@@ -26,12 +26,13 @@ public class AdminController {
 			private AdminService adminService;
 			
 			@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
-			public boolean addDepartment(@RequestBody DepartmentDto dept) {
+			//public boolean addDepartment(@RequestBody DepartmentDto dept) {
+			public Response<DepartmentDto> addDepartment(@RequestBody DepartmentDto dept){
 				return adminService.addDepartment(dept);
 			}
 			
 			@DeleteMapping()
-			public boolean removeDepartment(@RequestBody int deptId) {
+			public Response <DepartmentDto>removeDepartment(@RequestBody int deptId) {
 				return adminService.removeDepartment(deptId);
 			}
 			
@@ -61,7 +62,7 @@ public class AdminController {
 			}
 			
 			@GetMapping(value="/{operatorId}", produces = MediaType.APPLICATION_JSON_VALUE)
-			public Response<OperatorDto> findOperatorById(@PathVariable("operatorId") int operatorId){
+			public Response<List<OperatorDto>> findOperatorById(@PathVariable("operatorId") int operatorId){
 				return adminService.findOperatorById(operatorId);
 			}
 			

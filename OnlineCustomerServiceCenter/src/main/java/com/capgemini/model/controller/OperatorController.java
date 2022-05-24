@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.model.dto.CustomerDto;
-import com.capgemini.model.dto.Issue;
+import com.capgemini.model.dto.IssueDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.OperatorService;
 
@@ -25,7 +25,7 @@ public class OperatorController {
 		private OperatorService operatorService;
 			
 		@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
-		public Response<Issue> addCustomerIssue(@RequestBody Issue issue){
+		public Response<IssueDto> addCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.addCustomerIssue(issue);
 		}
 		
@@ -35,7 +35,7 @@ public class OperatorController {
 		}
 		
 		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-		public Response<Issue> modifyCustomerIssue(@RequestBody Issue issue){
+		public Response<IssueDto> modifyCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.modifyCustomerIssue(issue);
 		}
 		
@@ -45,7 +45,7 @@ public class OperatorController {
 		}
 		
 		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-		public Response<Issue> closeCustomerIssue(@RequestBody Issue issue){
+		public Response<IssueDto> closeCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.closeCustomerIssue(issue);
 		}
 		

@@ -25,4 +25,24 @@ public class Department {
 		super();
 	}
 
+	public Object getDeptName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getDeptId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setDepartmentName(Object departmentName) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setDepartmentId(Object deptId2) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

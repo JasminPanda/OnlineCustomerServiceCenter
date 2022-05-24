@@ -31,6 +31,54 @@ public class OperatorEntity {
 	private String mobile;
 	@Column(name = "city")
 	private String city;
+	public void setOperatorID(Object getOperatorId) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFirstName(Object getFirstName) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLastName(Object getLastName) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setEmail(Object getEmail) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setMobile(Object getMobile) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCity(Object getCity) {
+		// TODO Auto-generated method stub
+		
+	}
+	public Object getOperatorId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getFirstName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getLastName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getMobile() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object getCity() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	//@OneToMany
 	//@JoinColumn(name = "deptId", referencedColumnName = "deptId")

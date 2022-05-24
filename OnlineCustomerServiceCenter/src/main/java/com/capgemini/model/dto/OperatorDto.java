@@ -1,5 +1,6 @@
 package com.capgemini.model.dto;
 
+import com.capgemini.model.entity.OperatorEntity;
 
 public class OperatorDto {
 	private int operatorId;
@@ -8,6 +9,12 @@ public class OperatorDto {
 	private String email;
 	private String mobile;
 	private String city;
+	public Object getOperatorId;
+	public Object getFirstName;
+	public Object getLastName;
+	public Object getEmail;
+	public Object getMobile;
+	public Object getCity;
 	
 	public OperatorDto() {
 		
@@ -54,5 +61,10 @@ public class OperatorDto {
 	public String toString() {
 		return "Operator [operatorId=" + operatorId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
 				+ email + ", mobile=" + mobile + ", city=" + city + "]";
+	}
+
+	public static void save(OperatorEntity entity) {
+		// TODO Auto-generated method stub
+		
 	}
 }
