@@ -2,16 +2,20 @@ package com.capgemini.model.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.capgemini.model.dto.DepartmentDto;
 import com.capgemini.model.dto.OperatorDto;
 import com.capgemini.model.dto.Response;
 import com.capgemini.model.service.AdminService;
 
+@Service
 public class AdminServiceImpl implements AdminService {
 
+	
 	@Override
 	public boolean addDepartment(DepartmentDto dept) {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 
