@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.expression.spel.ast.Operator;
+
+import com.capgemini.model.dao.DepartmentDao;
 import com.capgemini.model.dao.OperatorDao;
 import com.capgemini.model.dto.AppError;
 import com.capgemini.model.dto.DepartmentDto;
@@ -16,7 +18,7 @@ import com.capgemini.model.entity.Department;
 import com.capgemini.model.entity.OperatorEntity;
 import com.capgemini.model.service.AdminService;
 
-import com.capgemini.model.service.dao.DepartmentDao;
+
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -32,7 +34,7 @@ public class AdminServiceImpl implements AdminService {
     private OperatorEntity operator;
     
 		
-		public Response<Department> addDepartment(Department department) {
+		public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
 		Response<Department> response=new Response<>();	
 		
 	 try {
@@ -52,12 +54,11 @@ public class AdminServiceImpl implements AdminService {
 			error.setMessage(e.getMessage());
 		 
 	 }
-		return response;
+		return null;
 	}
 
 	@Override
 	public Response<DepartmentDto> removeDepartment(int deptId) {
-		// TODO Auto-generated method stub
 		Response<Department> response=new Response<>();	
 		
 		 try {
@@ -82,7 +83,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<DepartmentDto> modifyDepartment(DepartmentDto dept) {
-		// TODO Auto-generated method stub
 		Response<Department> response=new Response<>();	
 		
 		 try {
@@ -131,7 +131,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public boolean addOperator(OperatorDto operator) {
-		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();	
 
 		 try {
@@ -165,7 +164,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public boolean removeOperator(int operatorId) {
-		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();	
 
 		 try {
@@ -199,7 +197,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<OperatorDto> modifyOperator(OperatorDto operator) {
-		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();	
 		
 		 try {
@@ -231,7 +228,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<List<OperatorDto>>findOperatorById(int operatorId) {
-		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();	
 		
 		 try {
@@ -266,7 +262,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public Response<List<OperatorDto>> findAllOperators() {
-		// TODO Auto-generated method stub
 		Response<OperatorDto> response=new Response<>();
 		 try {
 			    
@@ -299,11 +294,10 @@ public class AdminServiceImpl implements AdminService {
 	
 	}
 
-	@Override
-	public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	//@Override
+	//public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
+		//return null;
+	//}
 
 	
 

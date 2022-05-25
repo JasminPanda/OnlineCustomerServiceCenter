@@ -2,6 +2,7 @@ package com.capgemini.model.service;
 
 import java.util.List;
 
+import com.capgemini.model.dao.DepartmentDao;
 import com.capgemini.model.dto.DepartmentDto;
 import com.capgemini.model.dto.OperatorDto;
 import com.capgemini.model.dto.Response;
@@ -17,6 +18,5 @@ public interface AdminService {
 		public Response<OperatorDto> modifyOperator(OperatorDto operator);
 		public Response<List<OperatorDto>> findOperatorById(int operatorId);
 		public Response<List<OperatorDto>> findAllOperators();
-		Response<Department> addDepartment(Department department);
 		
 }

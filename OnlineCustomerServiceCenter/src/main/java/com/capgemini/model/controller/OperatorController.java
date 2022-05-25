@@ -24,7 +24,7 @@ public class OperatorController {
 		@Autowired
 		private OperatorService operatorService;
 			
-		@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+		@PostMapping(value="/addCustomerIssue", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 		public Response<IssueDto> addCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.addCustomerIssue(issue);
 		}
@@ -34,7 +34,7 @@ public class OperatorController {
 			return operatorService.sendIntimationEmailToCustomer(operatorId, customerId);
 		}
 		
-		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+		@PutMapping(value="/modifyCustomerIssue", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<IssueDto> modifyCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.modifyCustomerIssue(issue);
 		}
@@ -44,22 +44,22 @@ public class OperatorController {
 			return operatorService.sendModificationEmailToCustomer(operatorId, customerId);
 		}
 		
-		@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+		@PutMapping(value="/closeCustomerIssue", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<IssueDto> closeCustomerIssue(@RequestBody IssueDto issue){
 			return operatorService.closeCustomerIssue(issue);
 		}
 		
-		@GetMapping(value="/{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/customer/{customerId}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<CustomerDto> findCustomerById(@PathVariable("customerId") Integer customerId){
 			return operatorService.findCustomerById(customerId);
 		}
 		
-		@GetMapping(value="/{customerEmail}", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/customer/{customerEmail}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<CustomerDto> findCustomerByEmail(@PathVariable("customerEmail") String customerEmail){
 			return operatorService.findCustomerByEmail(customerEmail);
 		}
 		
-		@GetMapping(value="/{customerName}", produces = MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value="/customer/{customerName}", produces = MediaType.APPLICATION_JSON_VALUE)
 		public Response<List<CustomerDto>> findCustomerByName(@PathVariable("customerName") String customerName){
 			return operatorService.findCustomerByName(customerName);
 		}		

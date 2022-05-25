@@ -7,5 +7,5 @@ import com.capgemini.model.entity.OperatorEntity;
 
 @Repository
 public interface OperatorDao extends JpaRepository<OperatorEntity, Integer>{
-			OperatorEntity findByOperatorName(String operatorName);
+			OperatorEntity findByOperatorId(int operatorId);
 }
