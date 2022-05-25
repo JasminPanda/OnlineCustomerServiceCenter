@@ -32,8 +32,6 @@ public class OperatorEntity {
 	@Column(name = "city")
 	private String city;
 	
-	//@OneToMany
-	//@JoinColumn(name = "deptId", referencedColumnName = "deptId")
-	//private  Department dept;
+	
 	
 }

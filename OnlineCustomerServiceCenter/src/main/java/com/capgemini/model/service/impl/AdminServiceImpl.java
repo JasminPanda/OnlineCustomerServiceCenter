@@ -294,11 +294,4 @@ public class AdminServiceImpl implements AdminService {
 	
 	}
 
-	//@Override
-	//public Response<DepartmentDto> addDepartment(DepartmentDto dept) {
-		//return null;
-	//}
-
-	
-
 }
