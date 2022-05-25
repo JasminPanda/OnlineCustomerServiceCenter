@@ -25,18 +25,18 @@ public class AdminController {
 			@Autowired
 			private AdminService adminService;
 			
-			@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+			@PostMapping(value="addDepartment", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 			//public boolean addDepartment(@RequestBody DepartmentDto dept) {
 			public Response<DepartmentDto> addDepartment(@RequestBody DepartmentDto dept){
 				return adminService.addDepartment(dept);
 			}
 			
-			@DeleteMapping()
+			@DeleteMapping("/removeDepartment")
 			public Response <DepartmentDto>removeDepartment(@RequestBody int deptId) {
 				return adminService.removeDepartment(deptId);
 			}
 			
-			@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+			@PutMapping(value="/modifydepartment", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 			public Response<DepartmentDto> modifyDepartment(@RequestBody DepartmentDto dept){
 				return adminService.modifyDepartment(dept);
 			}
@@ -46,7 +46,7 @@ public class AdminController {
 				return adminService.findByDepartmentId(deptId);
 			}
 			
-			@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+			@PostMapping(value="/addOperator", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 			public boolean addOperator(@RequestBody OperatorDto operator) {
 				return adminService.addOperator(operator);
 			}
@@ -56,7 +56,7 @@ public class AdminController {
 				return adminService.removeOperator(operatorId);
 			}
 			
-			@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
+			@PutMapping(value="/modifyOperator", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
 			public Response<OperatorDto> modifyOperator(@RequestBody OperatorDto operator){
 				return adminService.modifyOperator(operator);
 			}
@@ -66,7 +66,7 @@ public class AdminController {
 				return adminService.findOperatorById(operatorId);
 			}
 			
-			@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+			@GetMapping(value="/operators", produces = MediaType.APPLICATION_JSON_VALUE)
 			public Response<List<OperatorDto>> findAllOperators(){
 				return adminService.findAllOperators();
 			}

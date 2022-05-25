@@ -27,16 +27,16 @@ public class CustomerController {
 		return customerService.viewIssueById(issueId);
 	}
 	
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/openIssue",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response<IssueDto> reOpenIssue(@RequestBody int issue){
 		return customerService.reopenIssue(issue);
 	}
-	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="viewIssues", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Response<List<IssueDto>> viewAllIssues(@RequestBody IssueDto issue){
 		return customerService.viewAllIssues();
 	}
-	@GetMapping(value="/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public String changePassword(@PathVariable("password") LoginDto login){
+	@GetMapping(value="/{changePassword}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public String changePassword(@PathVariable("changePassword") LoginDto login){
 		return customerService.changePassword(login);
 	}
 	@GetMapping(value="/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
