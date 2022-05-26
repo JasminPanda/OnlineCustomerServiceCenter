@@ -227,71 +227,14 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public Response<List<OperatorDto>>findOperatorById(int operatorId) {
-		Response<OperatorDto> response=new Response<>();	
-		
-		 try {
-	    
-			 List<OperatorEntity> entities= operatorDao.findAll();
-			List<Operator> operators= new ArrayList<>();
-			 if(entities != null) {
-				 for(OperatorEntity   entity: entities) {
-				 OperatorEntity newOperator= new OperatorEntity();
-					
-					newOperator.setOperatorId(entity.getOperatorId());
-					newOperator.setFirstName(entity.getFirstName());
-					newOperator.setLastName(entity.getLastName());
-					newOperator.setEmail(entity.getEmail());
-					newOperator.setMobile(entity.getMobile());
-					newOperator.setCity(entity.getCity());
-					operators.add(null);
-				 }
-				 
-			 }
-			 response.setData(department);	
-		 } catch(Exception e) {
-			 AppError error = new AppError();
-				error.setCode("ERR_GETTING_DEPARTMENT");
-				error.setMessage(e.getMessage());
-			 
-		 }
-		
-		
+	public Response<List<OperatorDto>> findOperatorById(int operatorId) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Response<List<OperatorDto>> findAllOperators() {
-		Response<OperatorDto> response=new Response<>();
-		 try {
-			    
-			 List<OperatorEntity> entities= operatorDao.findAll();
-			List<Operator> operators= new ArrayList<>();
-			 if(entities != null) {
-				 for(OperatorEntity   entity: entities) {
-				 OperatorEntity newOperator= new OperatorEntity();
-					
-					newOperator.setOperatorId(entity.getOperatorId());
-					newOperator.setFirstName(entity.getFirstName());
-					newOperator.setLastName(entity.getLastName());
-					newOperator.setEmail(entity.getEmail());
-					newOperator.setMobile(entity.getMobile());
-					newOperator.setCity(entity.getCity());
-					operators.add(null);
-				 }
-				 
-			 }
-			response.setData(department);	
-		 } catch(Exception e) {
-			 AppError error = new AppError();
-				error.setCode("ERR_GETTING_DEPARTMENT");
-				error.setMessage(e.getMessage());
-			 
-		 }
-		
-		
+		// TODO Auto-generated method stub
 		return null;
-	
 	}
-
 }
